@@ -1,0 +1,59 @@
+@import '../global.scss';
+
+.cardPublicacoes{
+  background-color: $background2;
+  max-width: 866px;
+
+  .cardPublicacoes__container {
+    padding: 30px 50px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    'titulo titulo titulo titulo'
+    'subtitulo subtitulo subtitulo subtitulo'
+    '. . nota botao'
+  }
+
+  .cardPublicacoes__titulo{
+    grid-area: titulo;
+    text-decoration: none;
+    color: $white;
+    font-size: 27px;
+    padding-bottom: 10px;
+  }
+
+  .cardPublicacoes__subtitulo{
+    grid-area: subtitulo;
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+
+  .cardPublicacoes__nota{
+    grid-area: nota;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+  }
+
+  .cardPublicacoes__botao{
+    grid-area: botao;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    button {
+      border: none;
+      width: 150px;
+      height: 50px;
+      padding: 10px;
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 20px;
+      outline: none;
+    }
+  }
+}

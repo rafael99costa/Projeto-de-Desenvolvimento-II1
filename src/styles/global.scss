@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+$white: #FFF;
+$black: #000;
+$background: #23272C;
+$background2: #1E2126;
+$backgroundAlternativo: #536473;
+$teste: #e9b052;
+$primario: #3FAB74;
+$secundario: #EA6552;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $background;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+
+
+// CORES DOS COMPONENTES
+// #22252c PRINCIPAL
+// #1E2126 PRICIPAL2
+
+// CORES BOTAO 3
+// #27a3d4 AZUL
+// #29A4D0 AZUL2
+
+// CORES BOTAO PRIMARIO
+// #26BF78 VERDE
+
+// #e9b052 AMARELO QUEIMADO
+// #F2AC57 AMARELO QUEIMADO2
+
+// CORES BOTAO SECUNDARIO
+// #ea6552 LARANJA
+// #F26457 LARANJA2
+
+// CORES DO BACKGROUND
+// #ea6552 GRAY
+// #536473 GRAY2
+
+
+
+
+// #23272C PRINCIPAL
+// #3FAB74 VERDE BUTTON
+// #28A3D3 AZUL
+// #EA6552 LARANJA BUTTON
+
+
