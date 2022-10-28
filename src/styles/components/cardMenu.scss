@@ -2,13 +2,14 @@
 
 .cardMenu {
   background-color: $background2;
-
-  display:table;
+  display: table;
   min-width: 65px;
   height: 50px;
   padding: 4px;
   vertical-align: middle;
   text-align: center;
+
+  
   
   // display: flex;
   // flex-direction: column;
@@ -17,4 +18,8 @@
   .cardMenu__titulo{
     color: $white;
   }
+}
+
+.cardMenu:hover {  
+  background-color: $primario;
 }

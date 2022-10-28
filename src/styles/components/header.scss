@@ -54,3 +54,38 @@
     align-items: center;
   }
 }
+
+.nav {
+  float: left; /* Clear floats */
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  font-weight: bold;
+
+  button {
+    width: 200px;
+    height: 40px;
+    background-color: $primario;
+    border: 0;
+    font-size: 20px;
+  }
+}
+
+.nav li {
+  position: relative;
+  float: left;
+}
+
+.nav__sub-menu {
+  list-style: none;
+  position: absolute;
+  left: -9999px;
+}
+
+.nav__sub-menu li {
+  float: none;
+}
+
+.nav li:hover ul{
+  left: 0;
+}

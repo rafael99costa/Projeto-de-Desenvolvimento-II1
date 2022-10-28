@@ -1,8 +1,11 @@
-import Home from "./pages/Home";
+import { PublicacoesProvider } from "./contexts/PublicacoesContext";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <Home />
+    <PublicacoesProvider>
+      <AppRoutes />
+    </PublicacoesProvider>
   );
 }
 
