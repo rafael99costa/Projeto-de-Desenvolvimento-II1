@@ -1,7 +1,7 @@
 import React from 'react';
 import Avaliacao from "../Avaliacao";
 import '../../styles/components/feedbackFrom.scss';
-import Button from '../Button';
+import Button from '../Button/ButtonComponent';
 
 const FeedbackForm = () => {
   return (

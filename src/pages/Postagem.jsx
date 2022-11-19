@@ -1,23 +1,21 @@
 import React, { useContext } from "react";
-import { Link, useParams } from 'react-router-dom';
-import Header from "../components/Header";
+import {  useParams } from 'react-router-dom';
 import { PublicacoesContext } from "../contexts/PublicacoesContext";
 
 
 const Postagem = () => {
   const { publicacao } = useParams();
-  const { publicacoes } = useContext(PublicacoesContext);
+  const { postsList } = useContext(PublicacoesContext);
 
   return (
     <>
-      {/* <Header /> */}
       {
-        publicacoes
-          .filter((list) => list.id == publicacao)
-          .map((list) => (
-            <div key={list.id}>
-              <h2>{list.titulo}</h2>
-              <h3>{list.descricao}</h3>
+        postsList
+          .filter((post) => post.id === publicacao)
+          .map((post) => (
+            <div key={post.id}>
+              <h1>{post.titulo}</h1>
+              <h1>{post.categoria}</h1>
             </div>
           ))
       }

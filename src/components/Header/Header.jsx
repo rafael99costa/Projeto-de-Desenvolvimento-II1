@@ -1,15 +1,15 @@
 import React from "react";
 import '../../styles/components/header.scss';
-import CardMenu from "../CardMenu";
 import {javascriptIcon, typescriptIcon, javaIcon, pythonIcon, phpIcon, kotlinIcon, goIcon, rubyIcon, cSharpIcon, cPlusPlusIcon, htmlIcon, cssIcon} from "../../assets/icons/icons";
 import { Link } from "react-router-dom";
+import CardMenu from "../CardMenu/CardMenu";
 
 
 const Header = () => {
   return (
     <header className="header">
-      <div class="header__container">
-        <a href="/" class="header__logo"><h2>LOGO</h2></a> {/* code tips */}
+      <div className="header__container">
+        <a href="/" className="header__logo"><h2>LOGO</h2></a> {/* code tips */}
 
         <div className="header__categorias">
           <ul className="nav">

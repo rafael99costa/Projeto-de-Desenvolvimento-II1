@@ -1,8 +1,9 @@
-
+import FormularioPostagem from "../components/FormularioPostagem/FormularioPostagem";
 
 const Postar = () => {
+
   return (
-    <h1>Postar</h1>
+    <FormularioPostagem />
   )
 }
 

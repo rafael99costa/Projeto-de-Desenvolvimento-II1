@@ -1,11 +1,14 @@
+import { AuthGithubProvider } from "./contexts/AuthGithubContext";
 import { PublicacoesProvider } from "./contexts/PublicacoesContext";
 import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <PublicacoesProvider>
-      <AppRoutes />
-    </PublicacoesProvider>
+    <AuthGithubProvider>
+      <PublicacoesProvider>
+        <AppRoutes />
+      </PublicacoesProvider>
+    </AuthGithubProvider>
   );
 }
 

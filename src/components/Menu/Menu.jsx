@@ -1,5 +1,5 @@
 import React from "react";
-import CardMenu from "../CardMenu";
+import CardMenu from "../CardMenu/CardMenu";
 import '../../styles/components/menu.scss';
 import {javascriptIcon, typescriptIcon, javaIcon, pythonIcon, phpIcon, kotlinIcon, goIcon, rubyIcon, cSharpIcon, cPlusPlusIcon, htmlIcon, cssIcon} from "../../assets/icons/icons";
 import { Link } from "react-router-dom";
