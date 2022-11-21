@@ -1,0 +1,74 @@
+@import '../global.scss';
+
+form {
+  display: grid;
+
+  .formulario__fields {
+    display: block;
+    margin: 10px 0;
+  
+    label {
+      font-style: normal;
+      font-weight: 400;
+      white-space: pre-wrap;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  
+    input, textarea, select {
+      background-color: #FFFFFF;
+      border: 2px solid #ADADAD;
+      border-radius: 0.25rem;
+      color: #666666;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      text-overflow: ellipsis;
+      width: 100%;
+      padding-top: 0.75rem;
+      padding-right: 1rem;
+      padding-bottom: 0.75rem;
+      padding-left: 1rem;
+    }
+  
+    input:focus, textarea:focus, select:focus {
+      border: 2px solid #000;
+    }
+  
+    textarea {
+      height: 150px;
+    }
+  
+    .formulario__descricao {
+      height: 300px;
+    }
+  
+    .mensagem {
+      display: block;
+    }
+  }
+
+  .button {
+    justify-self: end;
+    font-size: 0.875rem;
+    line-height: 2rem;
+    width: 130px;
+    border: none;
+    background-color: $primario;
+    border-radius: 2px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button:disabled {
+    background-color: white;
+    cursor: no-drop;
+  }
+}
+

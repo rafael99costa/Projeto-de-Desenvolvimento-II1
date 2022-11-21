@@ -16,11 +16,6 @@ const Publicacoes = () => {
 
   return (
     <div className="publicacoes">
-      {/* <div className="publicacoes__menu">
-        <div className="publicacoes__botao">Recentes</div>
-        <div className="publicacoes__botao">Destaques</div>
-      </div> */}
-
       <div className="publicacoes__bloco">
         {
           postsList.map(post => (
@@ -33,6 +28,7 @@ const Publicacoes = () => {
               link={post.link}
               notas={post.notas}
               data_postagem={post.data_postagem}
+              usuario={post.usuario}
             />
           ))
         }

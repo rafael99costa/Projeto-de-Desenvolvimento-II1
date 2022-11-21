@@ -3,28 +3,30 @@
 .header {
   width: 100%;
   background-color: $background2;
-  position: fixed;
+  position: sticky;
+  top: 0; 
 
-  .header__container{
-    max-width: 1100px;
-    margin: auto;
+  .header__container {
+    max-width: 1024px;
+    margin: 0 auto;
     padding: 20px 0;
     display: grid;
-    grid-template-columns: 200px 200px 650px 50px;
     align-items: center;
+    grid-template-columns: repeat(8, 128px);
+    grid-template-areas: 'logo categorias pesquisar pesquisar pesquisar pesquisar postar avatar';
   }
 
-  .header__logo{
-    background-color: $background;
+  .header__logo {
+    grid-area: logo;
     text-decoration: none;
-    color: black;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .header__categorias{
+  .header__categorias {
+    grid-area: categorias;
     background-color: $primario;
     height: 40px;
     display: flex;
@@ -32,42 +34,74 @@
     align-items: center;
   }
 
-  .header__input{
-    justify-self: center;
-    width: 90%;
-    border: none;
-    border: solid 1px #ccc;
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 0 7px;
-    height: 40px;
-    outline: 0;
+  .header__pesquisar{
+    grid-area: pesquisar;
+
+    .header__pesquisar__form {
+      display: grid;
+      grid-template-columns: minmax(100px, 448px) 64px;
+  
+      .header__pesquisar__input {
+        input {
+          width: 100%;
+          justify-self: center;
+          border: none;
+          // font-size: 20px;
+          padding: 0 7px;
+          height: 40px;
+          outline: 0;
+        }
+      }
+
+      .header__pesquisar__button {
+        background-color: $primario;
+        border: 0;
+      }
+    }
   }
 
-  .header_avatar{
-    background-color: $background;
+  .header__postar {
+    grid-area: postar;
+    text-decoration: none;
     height: 40px;
-    width: 40px;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    // background-color: crimson;
+  }
+
+  .header_avatar {
+    grid-area: avatar;
+    text-decoration: none;
+    height: 40px;
+    
+    button {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: $primario;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
 .nav {
-  float: left; /* Clear floats */
+  float: left;
   width: 100%;
   height: 100%;
   list-style: none;
   font-weight: bold;
 
   button {
-    width: 200px;
+    width: 128px;
     height: 40px;
     background-color: $primario;
+    color: white;
     border: 0;
-    font-size: 20px;
+    // font-size: 20px;
   }
 }
 
@@ -80,6 +114,23 @@
   list-style: none;
   position: absolute;
   left: -9999px;
+
+  overflow-y: scroll;
+  height: 80vh;
+
+  &::-webkit-scrollbar {
+      width: 15px;
+  }
+  
+  &::-webkit-scrollbar-track {
+      background: var(--background);
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: #808080;
+      border-radius: 20px;
+      border: 3px solid var(--background);
+  }
 }
 
 .nav__sub-menu li {
@@ -89,3 +140,4 @@
 .nav li:hover ul{
   left: 0;
 }
+

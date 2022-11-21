@@ -1,12 +1,38 @@
 @import '../global.scss';
 
 .menu {
-  // display: grid;
-  // grid-auto-flow: column;
-  // justify-content: center;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  justify-items: center;
   background-color: $background2;
+
+  .menu__container {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 95%;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      width: 15px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: var(--background);
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #808080;
+      border-radius: 20px;
+      border: 3px solid var(--background);
+    }
+  }
+
+  .menu__container a:first-child {
+      margin-left: auto;
+  }
+
+  .menu__container a:last-child {
+      margin-right: auto;
+  }
 }

@@ -3,8 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import '../../styles/components/cardPublicacoes.scss';
 import Button from '../Button/ButtonComponent';
+import { addFavoriteIcon, removeFavoriteIcon, usuariosIcon } from "../../assets/icons/icons";
 
-const CardPublicacoes = ({id, titulo, categoria, descricao, link, notas, data_postagem}) => {
+const CardPublicacoes = ({id, titulo, categoria, descricao, link, notas, data_postagem, usuario}) => {
   const [mediaNota, setMediaNota] = useState(0);
   const linkUrl = useRef(titulo.toLowerCase().replace(/ /g, "-"));
 
@@ -21,14 +22,30 @@ const CardPublicacoes = ({id, titulo, categoria, descricao, link, notas, data_po
   return (
     <div className="cardPublicacoes">
       <div className="cardPublicacoes__container">
-        <h1 className="cardPublicacoes__titulo"><Link to={`/posts/${id}/${linkUrl.current}`}>{titulo}</Link></h1>
-        <h3 className="cardPublicacoes__subtitulo">{categoria}</h3>
-        <h2 className="cardPublicacoes__nota">
+        <span className="cardPublicacoes__titulo"><Link to={`/posts/${id}/${linkUrl.current}`}>{titulo}</Link></span>
+
+        <span className="cardPublicacoes__categoria">{categoria[0].toUpperCase() + categoria.substr(1)}</span>
+        
+        <span className="cardPublicacoes__nota">
           { mediaNota.toFixed(1) }/10
-        </h2>
-        <a className="cardPublicacoes__botao" href={link}>
-          <Button type="button">Acessar conteúdo</Button>
-        </a>
+        </span>
+        <span className="cardPublicacoes__botao">
+          <Link to={link}><Button type="button">Acessar conteúdo</Button></Link>
+        </span>
+
+        <span className='cardPublicacoes__perfil'>
+          <img src={`${usuario.perfil}`} alt="perfil" />
+          <span>{usuario.user}</span>
+        </span>
+
+        <span className='cardPublicacoes__favoriteIcon'>
+          {addFavoriteIcon}
+        </span>
+
+        <span className='cardPublicacoes__quantidadeUsuarios'>
+          {usuariosIcon}
+          <span>{Object.keys(notas).length}</span>
+        </span>
       </div>
     </div>
   )

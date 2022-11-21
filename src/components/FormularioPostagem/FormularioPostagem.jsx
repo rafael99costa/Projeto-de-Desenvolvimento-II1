@@ -1,36 +1,48 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { PublicacoesContext } from "../../contexts/PublicacoesContext";
+import "../../styles/components/FormularioPostagem.scss";
 
 
 const FormularioPostagem = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch,  formState: { errors } } = useForm({
+    mode:'onTouched',
+    defaultValues:{
+      link:'https://www.'
+    }
+  });
   const { addPost } = useContext(PublicacoesContext);
   const onSubmit = data => addPost(data);
 
+  const linkWatch = watch('link');
+  const tituloWatch = watch('titulo');
+  const categoriaWatch = watch('categoria');
+  const descricaoWatch= watch('descricao');
+  const isValid = linkWatch && tituloWatch && categoriaWatch && descricaoWatch;
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      
-      <span className="fields">
-        <label htmlFor="titulo">Titulo</label>
+    <form onSubmit={handleSubmit(onSubmit)} className="formulario">
+
+      <span className="formulario__fields formulario__link">
+        <label htmlFor="link">Link da postagem*</label>
+        <input placeholder="https://" id="link" {...register('link', {
+          required: "Campo obrigatório!", 
+          pattern: {
+            value:/^((ftp|http|https):\/\/)?www\.([A-z]+)\.([A-z]{2,})/,
+            message: "Insira uma URL válida"
+          }})}
+        />
+        { errors.link && <span>{errors.link.message}</span> }
+      </span>
+
+      <span className="formulario__fields formulario__titulo">
+        <label htmlFor="titulo">Titulo*</label>
         <input placeholder="Titulo" id="titulo" {...register("titulo", { required: "Campo obrigatório!", })} />
         { errors.titulo && <span>{errors.titulo.message}</span> }
       </span>
 
-      <span className="fields">
-        <label htmlFor="descricao">Descrição</label>
-        <input placeholder="Descrição" id="descricao" {...register("descricao")} />
-        { errors.descricao && <span>{errors.descricao.message}</span> }
-      </span>
-
-      <span className="fields">
-        <label htmlFor="link">Link da postagem</label>
-        <input placeholder="Link" id="link" {...register('link', { required: "Campo obrigatório!", })} />
-        { errors.link && <span>{errors.link.message}</span> }
-      </span>
-
-      <span className="fields">
-        <label htmlFor="categoria">Categoria</label>
+      <span className="formulario__fields formulario__categoria">
+        <label htmlFor="categoria">Categoria*</label>
         <select name="categoria" {...register("categoria", {required: "Selecione uma opção"})}>
           <option value="javascript">Javascript</option>
           <option value="python">Python</option>
@@ -39,17 +51,16 @@ const FormularioPostagem = () => {
           <option value="c">C</option>
         </select>
       </span>
+    
+      <span className="formulario__fields formulario__descricao">
+        <label htmlFor="descricao">Descrição*</label>
+        <textarea placeholder="Descrição" id="descricao" {...register("descricao")} />
+        { errors.descricao && <span>{errors.descricao.message}</span> }
+      </span>
 
-      <input type="submit" />
+      <input type="submit" className="button" disabled = {!isValid} />
     </form>
   );
 };
-
-// titulo
-// categoria
-// link
-// descricao
-// notas
-// data_postagem
 
 export default FormularioPostagem;
