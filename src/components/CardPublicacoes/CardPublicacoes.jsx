@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import '../../styles/components/cardPublicacoes.scss';
 import Button from '../Button/ButtonComponent';
-import { addFavoriteIcon, removeFavoriteIcon, usuariosIcon } from "../../assets/icons/icons";
+import { usuariosIcon } from "../../assets/icons/icons";
 
-const CardPublicacoes = ({id, titulo, categoria, descricao, link, notas, data_postagem, usuario}) => {
+const CardPublicacoes = ({id, titulo, categoria, link, notas, usuario}) => {
   const [mediaNota, setMediaNota] = useState(0);
   const linkUrl = useRef(titulo.toLowerCase().replace(/ /g, "-"));
 
@@ -27,19 +27,15 @@ const CardPublicacoes = ({id, titulo, categoria, descricao, link, notas, data_po
         <span className="cardPublicacoes__categoria">{categoria[0].toUpperCase() + categoria.substr(1)}</span>
         
         <span className="cardPublicacoes__nota">
-          { mediaNota.toFixed(1) }/10
+          { notas.length > 0 ? mediaNota.toFixed(1) : 0 }/10
         </span>
         <span className="cardPublicacoes__botao">
-          <Link to={link}><Button type="button">Acessar conteúdo</Button></Link>
+          <a href={link}><Button type="button">Acessar conteúdo</Button></a>
         </span>
 
         <span className='cardPublicacoes__perfil'>
           <img src={`${usuario.perfil}`} alt="perfil" />
           <span>{usuario.user}</span>
-        </span>
-
-        <span className='cardPublicacoes__favoriteIcon'>
-          {addFavoriteIcon}
         </span>
 
         <span className='cardPublicacoes__quantidadeUsuarios'>

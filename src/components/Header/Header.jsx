@@ -2,8 +2,13 @@ import '../../styles/components/header.scss';
 import {javascriptIcon, typescriptIcon, javaIcon, pythonIcon, phpIcon, kotlinIcon, goIcon, rubyIcon, cSharpIcon, cPlusPlusIcon, htmlIcon, cssIcon, searchIcon} from "../../assets/icons/icons";
 import { Link } from "react-router-dom";
 import CardMenu from "../CardMenu/CardMenu";
+import { useState } from 'react';
+import Login from '../Login/Login';
+import Modal from '../Modal/Modal';
 
 const Header = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <header className="header">
 
@@ -50,12 +55,15 @@ const Header = () => {
       </span>
 
       <span className="header_avatar">
-        <button>
+        <button onClick={() => setShowModal(true)}>
           <svg xmlns="http://www.w3.org/2000/svg"  width="30" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
           </svg>
           <span>Login</span>
         </button>
+        <Modal show={showModal} setShow={setShowModal}>
+          <Login />
+        </Modal>
       </span>
 
       </span>

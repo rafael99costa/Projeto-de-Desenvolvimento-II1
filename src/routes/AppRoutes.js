@@ -8,6 +8,7 @@ import Postar from '../pages/Postar';
 import Login from '../pages/Login';
 import Home from '../pages/Home';
 import Header from '../components/Header/Header';
+import Favoritos from '../components/Favoritos/Favoritos';
 
 const Private = ({ Item }) => {
   const { signed } = useContext(AuthGithubContext);
@@ -25,6 +26,7 @@ const AppRoutes = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/perfil' element={<Private Item={Perfil} />} />
         <Route path='/postar' element={<Private Item={Postar} />} />
+        <Route path='/perfil/favoritos' element={<Private Item={Favoritos} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
