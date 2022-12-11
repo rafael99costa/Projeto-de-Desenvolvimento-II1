@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { PublicacoesContext } from "../../contexts/PublicacoesContext";
 import "../../styles/components/formularioPostagem.scss";
+import { PublicacoesContext } from "../../contexts/PublicacoesContext";
 
 
 const FormularioPostagem = () => {
