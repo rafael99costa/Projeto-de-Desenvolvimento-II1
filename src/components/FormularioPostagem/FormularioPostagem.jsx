@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "../../styles/components/formularioPostagem.scss";
 import { PublicacoesContext } from "../../contexts/PublicacoesContext";
 
-
 const FormularioPostagem = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, watch,  formState: { errors } } = useForm({
