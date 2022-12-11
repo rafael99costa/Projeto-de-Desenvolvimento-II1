@@ -83,3 +83,73 @@
     font-size: 20px;
   }
 }
+
+
+@media only screen and (max-width: 700px) {
+  .cardPublicacoes {
+    .cardPublicacoes__container {
+      grid-template-areas:
+      'titulo titulo titulo titulo titulo titulo titulo titulo titulo'
+      'categoria categoria categoria . . nota nota quantidadeUsuarios quantidadeUsuarios'
+      'perfil perfil perfil . . . botao botao botao';
+    }
+
+    .cardPublicacoes__perfil img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 527px) {
+  .cardPublicacoes {
+    .cardPublicacoes__titulo {
+      grid-area: titulo;
+      font-size: 23px;
+    }
+
+    .cardPublicacoes__categoria {
+      font-size: 23px;
+    }
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .cardPublicacoes {
+    .cardPublicacoes__container {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+      'perfil perfil perfil perfil'
+      'titulo titulo titulo titulo'
+      'categoria categoria nota quantidadeUsuarios'
+      '. . botao botao';
+    }
+
+    .cardPublicacoes__titulo {
+      grid-area: titulo;
+      font-size: 20px;
+    }
+
+    .cardPublicacoes__categoria {
+      font-size: 19px;
+    }
+
+    .cardPublicacoes__perfil {
+      font-size: 15px;
+
+      & img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    .cardPublicacoes__nota {
+      font-size: 19px;
+    }
+
+    .cardPublicacoes__quantidadeUsuarios {
+      font-size: 19px;
+    }
+  }
+}

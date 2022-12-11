@@ -8,24 +8,26 @@ const Categoria = () => {
   const { categoria } = useParams();
   const { postsList } = useContext(PublicacoesContext);
 
+  const posts = postsList
+  .filter((post) => post.categoria.toLowerCase() === categoria)
+  .map((post) => (
+    <CardPublicacoes
+      key={post.id}
+      id={post.id}
+      titulo={post.titulo}
+      categoria={post.categoria}
+      descricao={post.descricao}
+      link={post.link}
+      notas={post.notas}
+      data_postagem={post.data_postagem}
+      usuario={post.usuario}
+    />
+  ))
+  
   return (
     <span className="categoria">
       {
-        postsList
-          .filter((post) => post.categoria.toLowerCase() === categoria)
-          .map((post) => (
-            <CardPublicacoes
-              key={post.id}
-              id={post.id}
-              titulo={post.titulo}
-              categoria={post.categoria}
-              descricao={post.descricao}
-              link={post.link}
-              notas={post.notas}
-              data_postagem={post.data_postagem}
-              usuario={post.usuario}
-            />
-          ))
+        posts.length > 0 ? posts : (<h1>Não temos nenhuma postagem aqui. Você pode ser o primeiro a postar nessa categoria!</h1>)
       }
     </span>
   )

@@ -1,10 +1,9 @@
 @import '../global.scss';
 
 .header {
-  width: 100%;
   background-color: $background2;
   position: sticky;
-  top: 0; 
+  top: 0;
 
   .header__container {
     max-width: 1024px;
@@ -12,7 +11,7 @@
     padding: 20px 0;
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(8, 128px);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-areas: 'logo categorias pesquisar pesquisar pesquisar pesquisar postar avatar';
   }
 
@@ -23,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.3em;
   }
 
   .header__categorias {
@@ -36,27 +36,50 @@
 
   .header__pesquisar{
     grid-area: pesquisar;
+    position: relative;
 
-    .header__pesquisar__form {
+    .header__searchBox {
       display: grid;
-      grid-template-columns: minmax(100px, 448px) 64px;
-  
-      .header__pesquisar__input {
-        input {
-          width: 100%;
-          justify-self: center;
-          border: none;
-          // font-size: 20px;
-          padding: 0 7px;
-          height: 40px;
-          outline: 0;
-        }
-      }
+      justify-items: center;
+      align-items: center;
+      grid-auto-flow: column;
+      grid-template-columns: 7fr 1fr;
 
-      .header__pesquisar__button {
-        background-color: $primario;
-        border: 0;
+      .header__pesquisar__input {
+        width: 100%;
+        justify-self: center;
+        border: none;
+        font-size: 20px;
+        padding: 0 7px;
+        height: 40px;
+        outline: 0;
       }
+    }
+    
+    .dropdown {
+      background-color: $background;
+      position: absolute;
+      max-height: 500px;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+    
+    .dropdown__menu {
+      padding: 10px 0;
+    }
+
+    .card {
+      height: 30px;
+      padding: 30px 10px;
+      display: grid;
+      justify-content: start;
+      align-content: center;
+    }
+
+    .card:hover {
+      background-color: $primario;
     }
   }
 
@@ -67,7 +90,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: crimson;
   }
 
   .header_avatar {
@@ -75,7 +97,7 @@
     text-decoration: none;
     height: 40px;
     
-    button {
+    .header_button {
       width: 100%;
       height: 100%;
       border: none;
@@ -89,19 +111,12 @@
 }
 
 .nav {
-  float: left;
-  width: 100%;
-  height: 100%;
-  list-style: none;
-  font-weight: bold;
-
   button {
     width: 128px;
     height: 40px;
     background-color: $primario;
-    color: white;
+    color: $white;
     border: 0;
-    // font-size: 20px;
   }
 }
 
@@ -141,3 +156,27 @@
   left: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .header{
+
+    .header__container {
+      grid-template-areas: 'logo logo pesquisar pesquisar pesquisar pesquisar postar avatar';
+    }
+  
+    .header__categorias {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .header {
+    .header__container {
+      row-gap: 10px;
+      grid-template-areas: 
+        'logo logo logo . postar postar avatar avatar'
+        'pesquisar pesquisar pesquisar pesquisar pesquisar pesquisar pesquisar pesquisar';
+    }
+
+  }
+}

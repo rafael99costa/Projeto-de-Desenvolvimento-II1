@@ -56,7 +56,9 @@ const CardPostagem = ({ post }) => {
         </span>
 
         <span className="cardPostagem__botaoAvaliar">
-          <Button type="button" click={() => setShowModal(true)}>Avaliar</Button>
+          <span>
+            {user ? <Button type="button" click={() => setShowModal(true)}>Avaliar</Button> : <></>}
+          </span>
           <Modal show={showModal} setShow={setShowModal}>
             <Avaliacao post={post} />
           </Modal>
@@ -88,23 +90,12 @@ const CardPostagem = ({ post }) => {
         </span>
 
         <span className="cardPostagem__dataPostagem">
-          {/* Publicado em {post.data_postagem.toDate().toLocaleString()} */}
           Publicado em {post.data_postagem.toDate().toLocaleDateString()}
-
         </span>
 
       </div>
     </div>
   );
 };
-
-// link
-// categoria
-// data_postagem
-// descricao
-// id
-// notas
-// titulo
-// usuario (email, perfil, uid, user)
 
 export default CardPostagem;

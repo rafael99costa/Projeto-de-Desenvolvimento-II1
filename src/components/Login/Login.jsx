@@ -1,23 +1,34 @@
 import { useContext } from "react";
 import { AuthGithubContext } from "../../contexts/AuthGithubContext";
+import Button from "../Button/ButtonComponent";
+import "../../styles/components/login.scss";
+import { useNavigate } from "react-router-dom";
+import { githubIcon } from "../../assets/icons/icons";
 
 const Login = () => {
-  const { loginGithub, logouGithub, user } = useContext(AuthGithubContext)
+  const { loginGithub, logouGithub, user } = useContext(AuthGithubContext);
+  const navigate = useNavigate();
+  const handleClick = () => window.location.reload(navigate('/perfil/favoritos'));
 
   return (
-    <div>
+    <div className="login">
       {
-        user ? (
-          <>
-            <h1>{user.email}</h1>
-            <h1>{user.displayName}</h1>
-            <h1>{user.reloadUserInfo.screenName}</h1>
-            <h1>{user.uid}</h1>
-            <img className="profile-img" src={user.photoURL} alt="" />
-            <button onClick={() => logouGithub()}>Logout</button>
-          </>
-        ) : (
-          <button onClick={() => loginGithub()}>Login</button>
+        user ? 
+        (
+          <div className="login__perfil">
+            <div className="login__card">
+              <img className="login__img" src={user.photoURL} alt="imagem perfil" />
+              <div className="login__nome">{user.reloadUserInfo.screenName}</div>
+              <div className="login__email">{user.email}</div>
+              <Button click={handleClick}>Meus Favoritos</Button>
+            </div>
+
+            <Button click={() => logouGithub()}>Logout</Button>
+          </div>
+        )
+        : 
+        (
+          <Button versao="secundario" click={() => loginGithub()}>{githubIcon} Login com Github</Button>
         )
       }
     </div>

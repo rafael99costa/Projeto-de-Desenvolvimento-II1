@@ -8,6 +8,10 @@
   width: 150px;
   height: 50px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
 }
 
 .btn--primario {
@@ -15,21 +19,11 @@
 }
 
 .btn--secundario {
-  background-color: $secundario;
+  background-color: $black;
+  width: 200px;
 }
 
 .btn:hover {
   transform: scale(0.98);
   opacity: 0.9;
 }
-
-// .btn:disabled {
-//   background-color: #ce2121;
-//   color: #333;
-//   cursor: auto;
-// }
-
-// .btn:disabled:hover {
-//   transform: scale(1);
-//   opacity: 1;
-// }

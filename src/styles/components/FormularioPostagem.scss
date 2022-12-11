@@ -1,74 +1,101 @@
 @import '../global.scss';
 
-form {
-  display: grid;
+.formulario {
+  max-width: 1024px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
 
-  .formulario__fields {
-    display: block;
-    margin: 10px 0;
-  
-    label {
-      font-style: normal;
-      font-weight: 400;
-      white-space: pre-wrap;
-      font-size: 1rem;
-      line-height: 1.5rem;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-  
-    input, textarea, select {
-      background-color: #FFFFFF;
-      border: 2px solid #ADADAD;
-      border-radius: 0.25rem;
-      color: #666666;
-      font-size: 0.875rem;
-      line-height: 1rem;
-      text-overflow: ellipsis;
-      width: 100%;
-      padding-top: 0.75rem;
-      padding-right: 1rem;
-      padding-bottom: 0.75rem;
-      padding-left: 1rem;
-    }
-  
-    input:focus, textarea:focus, select:focus {
-      border: 2px solid #000;
-    }
-  
-    textarea {
-      height: 150px;
-    }
-  
-    .formulario__descricao {
-      height: 300px;
-    }
-  
-    .mensagem {
+  .formulario__title {
+    font-size: 1.5rem;
+  }
+
+  form {
+    padding-top: 40px;
+    .formulario__fields {
       display: block;
+      margin: 10px 0;
+    
+      label {
+        font-style: normal;
+        font-weight: 400;
+        white-space: pre-wrap;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    
+      input, textarea, select {
+        background-color: #FFFFFF;
+        border: 2px solid #ADADAD;
+        border-radius: 0.25rem;
+        color: #666666;
+        font-size: 0.875rem;
+        line-height: 1rem;
+        text-overflow: ellipsis;
+        width: 100%;
+        padding-top: 0.75rem;
+        padding-right: 1rem;
+        padding-bottom: 0.75rem;
+        padding-left: 1rem;
+      }
+    
+      input:focus, textarea:focus, select:focus {
+        border: 2px solid #000;
+      }
+    
+      textarea {
+        height: 150px;
+      }
+    
+      .formulario__descricao {
+        height: 300px;
+      }
+    
+      .mensagem {
+        display: block;
+      }
     }
-  }
 
-  .button {
-    justify-self: end;
-    font-size: 0.875rem;
-    line-height: 2rem;
-    width: 130px;
-    border: none;
-    background-color: $primario;
-    border-radius: 2px;
-    text-decoration: none;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
+    .formulario__categoria {
+      #select-box{
+        overflow-y:auto;
+        border: 1px solid $black;
+        appearance: none;
+      }
+      option{
+        overflow-y:scroll;
+        color: $black;
+      }
+    }
   
-  .button:disabled {
-    background-color: white;
-    cursor: no-drop;
+    .button {
+      justify-self: end;
+      font-size: 0.875rem;
+      line-height: 2rem;
+      width: 130px;
+      border: none;
+      background-color: $primario;
+      border-radius: 2px;
+      text-decoration: none;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    
+    .button:disabled {
+      background-color: white;
+      cursor: no-drop;
+    }
   }
 }
 
+@media only screen and (max-width: 700px) {
+  .formulario {
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+  }
+}

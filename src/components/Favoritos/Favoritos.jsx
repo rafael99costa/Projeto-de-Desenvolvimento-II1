@@ -10,6 +10,7 @@ const Favoritos = () => {
 
   return (
     <span className="favoritos">
+      <span className="favoritos__title">Meus favoritos</span>
       {
         postsList
           .filter(post => post.favoritos.some(p => p.id_pessoa === user.uid))

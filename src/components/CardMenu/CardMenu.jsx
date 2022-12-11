@@ -3,7 +3,6 @@ import React from "react";
 import '../../styles/components/cardMenu.scss';
 
 const CardMenu = ({icone, titulo, tamanho}) => {
-
   const cardMenuStyles = {
     minWidth: tamanho,
   }
