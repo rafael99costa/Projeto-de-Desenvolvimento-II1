@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import CardPublicacoes from "../CardPublicacoes/CardPublicacoes";
-import '../../styles/components/publicacoes.scss';
+import '../../styles/components/publicacoes.scss'
 import { PublicacoesContext } from "../../contexts/PublicacoesContext";
 
 const Publicacoes = () => {
-  const { postsList } = useContext(PublicacoesContext);
+  const { postsList } = useContext(PublicacoesContext)
   
   return (
     <div className="publicacoes">
