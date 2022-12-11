@@ -7,12 +7,6 @@
   display: grid;
   justify-content: center;
   
-  .publicacoes__menu{
-    background-color: $backgroundAlternativo;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
   .publicacoes__botao{
     height: 100px;
     display: flex;

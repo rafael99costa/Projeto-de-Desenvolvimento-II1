@@ -3,6 +3,7 @@ import "../../styles/components/avaliacao.scss";
 import { useForm } from 'react-hook-form';
 import { PublicacoesContext } from "../../contexts/PublicacoesContext";
 import { AuthGithubContext } from "../../contexts/AuthGithubContext";
+import Button from "../Button/ButtonComponent";
 
 const Avaliacao = ({ post }) => {
   const { register, handleSubmit } = useForm();
@@ -21,7 +22,8 @@ const Avaliacao = ({ post }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="avaliacao">
+      <span className="avaliacao__titulo">Gostaria de avaliar a publicação?</span>
       <ul className="rating">
         <li>
           <input type="radio" id='num1' name='rating' value='1' {...register('nota')} />
@@ -73,7 +75,7 @@ const Avaliacao = ({ post }) => {
           <label htmlFor='num10'>10</label>
         </li>
       </ul>
-      <input type="submit" />
+      <Button type="submit">Avaliar</Button>
     </form>
   )
 }

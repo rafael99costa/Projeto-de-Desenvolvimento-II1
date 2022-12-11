@@ -6,14 +6,6 @@ import { PublicacoesContext } from "../../contexts/PublicacoesContext";
 const Publicacoes = () => {
   const { postsList } = useContext(PublicacoesContext);
   
-  // id
-  // titulo
-  // categoria
-  // descricao
-  // link
-  // notas  
-  // data_postagem
-
   return (
     <div className="publicacoes">
       <div className="publicacoes__bloco">

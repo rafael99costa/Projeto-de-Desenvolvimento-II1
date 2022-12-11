@@ -12,11 +12,6 @@ const AuthGithubProvider = ({ children }) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // email
-        // displayName
-        // photoURL
-        // uid
-        // user.reloadUserInfo.screenName
       }
     });
   }, []);

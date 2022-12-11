@@ -1,12 +1,11 @@
 import React from "react";
 import CardMenu from "../CardMenu/CardMenu";
 import '../../styles/components/menu.scss';
-import {javascriptIcon, typescriptIcon, javaIcon, pythonIcon, phpIcon, kotlinIcon, goIcon, rubyIcon, cSharpIcon, cPlusPlusIcon, htmlIcon, cssIcon} from "../../assets/icons/icons";
-import { Link } from "react-router-dom";
+import {javascriptIcon, typescriptIcon, javaIcon, pythonIcon, phpIcon, kotlinIcon, goIcon, rubyIcon, cSharpIcon, cPlusPlusIcon, htmlIcon, cssIcon, cIcon, sqlIcon, swiftIcon,} from "../../assets/icons/icons";
+import { Link, } from "react-router-dom";
 
 const Menu = () => {
   return (
-
     <span className="menu">
       <span className="menu__container">
         <Link to={`/categorias/javascript`}><CardMenu icone={javascriptIcon} titulo="Javascript" /></Link>
@@ -17,10 +16,13 @@ const Menu = () => {
         <Link to={`/categorias/kotlin`}><CardMenu icone={kotlinIcon} titulo="Kotlin" /></Link>
         <Link to={`/categorias/go`}><CardMenu icone={goIcon} titulo="Go" /></Link>
         <Link to={`/categorias/ruby`}><CardMenu icone={rubyIcon} titulo="Ruby" /></Link>
-        <Link to={`/categorias/c#`}><CardMenu icone={cSharpIcon} titulo="C#" /></Link>
+        <Link to={`/categorias/c`}><CardMenu icone={cIcon} titulo="C" /></Link>
+        <Link to={`/categorias/csharp`}><CardMenu icone={cSharpIcon} titulo="C#" /></Link>
         <Link to={`/categorias/c++`}><CardMenu icone={cPlusPlusIcon} titulo="C++" /></Link>
+        <Link to={`/categorias/swift`}><CardMenu icone={swiftIcon} titulo="Swift" /></Link>
         <Link to={`/categorias/html`}><CardMenu icone={htmlIcon} titulo="Html" /></Link>
         <Link to={`/categorias/css`}><CardMenu icone={cssIcon} titulo="Css" /></Link>
+        <Link to={`/categorias/sql`}><CardMenu icone={sqlIcon} titulo="Sql" /></Link>
       </span>      
     </span>
   )
